@@ -34,7 +34,7 @@ public class UbyteFile {
 	private int colNum;
 	
 	/**
-	 * 先把数据存字符串，后续在二次解析
+	 * 先把数据按顺序存储，后续再二次解析
 	 */
 	private List<Integer> content;
 	

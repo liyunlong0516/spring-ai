@@ -1,0 +1,27 @@
+server:
+  port: 10516
+  tomcat:
+    uri-encoding: utf-8
+    
+spring:  
+  application:
+    name: spring-ai
+  profiles: 
+    active: dev #默认环境(开发环境)
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource   #这里是配置druid连接池，以下都是druid的配置信息
+    url: jdbc:mysql://127.0.0.1:3306/study?serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: suntek
+
+mybatis:
+  mapper-locations: classpath*:/mapper/*.xml               #resource下的mapper
+  typeAliasesPackage: com.liyunlong.spring.ai.model        #多个package用逗号或者分号分隔
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+
+logging:
+  config: classpath:log4j2.xml
+  #config: classpath:log4j2.yml
